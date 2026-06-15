@@ -1,18 +1,41 @@
-import BSkyButton from "./buttons/BSkyButton";
-import HeaderMain from "./components/header/Header";
-import LatesEpisodesHeader from "./components/latest-episodes/LatesEpisodesHeader";
-import LatestEpisodesContainer from "./components/latest-episodes/LatestEpisodesContainer"
+import { useEffect } from "react"
+
+
+
+
+const BASE_URL = `https://69f8242bdd0c226688ee2bc2.mockapi.io/products`
+
+
+
 
 function App() {
+
+
+
+  useEffect(() => {
+
+
+    fetch(BASE_URL)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      
+    })
+    .catch(err => {
+      console.log(err)
+    })
+
+
+    console.log("mount");
+    
+  }, [])
+
+
+
+
   return (
-    <div className="bg-[#191919] min-h-dvh px-12.5">
-      <HeaderMain />
-
-      <LatesEpisodesHeader />
-
-      <LatestEpisodesContainer />
-    </div>
-  );
+    <div>App</div>
+  )
 }
 
-export default App;
+export default App
