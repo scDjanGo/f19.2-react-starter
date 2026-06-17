@@ -1,16 +1,9 @@
 import { useEffect } from "react";
 
 function ProductCard({ item }) {
+
+
   
-
-
-
-  useEffect(() => {
-    return () => {
-      console.log("component did unmount");
-      
-    }
-  }, [])
 
 
   return (
