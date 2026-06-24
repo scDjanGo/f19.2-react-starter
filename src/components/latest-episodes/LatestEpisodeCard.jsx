@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import BSkyButton from "../../buttons/BSkyButton";
+import { ThemeContext } from "../contexts/themContext";
 
 export default function LatestEpisodeCard({ cardInfo }) {
+  const {theme} = useContext(ThemeContext)
   return (
-    <div className="bg-[#000000] flex justify-between gap-13.25 rounded-4xl p-10">
+    <div className={` flex justify-between gap-13.25 rounded-4xl p-10 ${theme === "light" ? "bg-green-400" : "bg-[#000000]"}`}>
       <img
         src={cardInfo.img}
         alt=""
